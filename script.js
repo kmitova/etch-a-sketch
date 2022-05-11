@@ -1,7 +1,7 @@
 // grab container variable
 const container = document.getElementById("container");
-const customRows = document.getElementById("rows-num").value
-const customCols = document.getElementById("cols-num").value
+let customRows = 0
+let customCols = 0
 console.log(document.getElementById('rows-num').value)
 const buttonApply = document.getElementById('apply')
 
@@ -23,8 +23,11 @@ function removeOldGrid() {
   }
 }
 buttonApply.addEventListener('click', () => {
+  customRows = document.getElementById("rows-num").value;
+  customCols = document.getElementById("cols-num").value;
+  console.log(customCols)
   removeOldGrid()
   generateGrid(customRows, customCols)
 
 } )
-generateGrid(8, 8);
+// generateGrid(8, 8);
