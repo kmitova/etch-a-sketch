@@ -1,4 +1,4 @@
-// grab container variable
+// VARIABLES
 const container = document.getElementById("container");
 let customRows = 0;
 let customCols = 0;
@@ -7,9 +7,12 @@ const buttonApply = document.getElementById("apply");
 const DEFAULTCOLOR = "#000000"; // black
 let customColor = false;
 let oldGridRemoved = false;
+let currentColor
 
 // always generates an 8x8 grid upon loading
 window.onload = generateGrid(8, 8);
+
+// FUNCTIONS
 
 // function to generate grid and apply color
 function generateGrid(rows, cols) {
@@ -30,9 +33,13 @@ function applyColor() {
   currentCells.forEach((currentCell) =>
     currentCell.addEventListener("mouseover", () => {
       // console.log(e.type);
-      currentCell.style.backgroundColor = DEFAULTCOLOR;
+      currentCell.style.backgroundColor = colorChange(currentColor);
     })
   );
+}
+
+function colorChange(color) {
+  return color = DEFAULTCOLOR
 }
 
 function renewGrid() {
@@ -45,7 +52,7 @@ function renewGrid() {
   oldGridRemoved = true;
 }
 
-
+// EVENT LISTENERS
 buttonApply.addEventListener("click", () => {
   customRows = document.getElementById("rows-num").value;
   customCols = document.getElementById("cols-num").value;
