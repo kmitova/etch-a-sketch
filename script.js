@@ -5,6 +5,7 @@ let customCols = 0;
 console.log(document.getElementById("rows-num").value);
 const buttonApply = document.getElementById("apply");
 const DEFAULTCOLOR = "#000000"; // black
+let defaultColorOn = true
 let customColor = false;
 let oldGridRemoved = false;
 let currentColor
@@ -39,7 +40,10 @@ function applyColor() {
 }
 
 function colorChange(color) {
-  return color = DEFAULTCOLOR
+  if (defaultColorOn) {
+    return color = DEFAULTCOLOR
+  }
+  // make default color false for the other cases
 }
 
 function renewGrid() {

@@ -11,6 +11,8 @@
 7. make it possible for the user to set the square amount themselves (but default is 8x8); then remove the dault and replace it with the new grid, taking the same space (the total space of the container div) + set a limit to the size: 100
 
 8. make it possible for the color to change
+9. add option to remove border of cells
+
 
 https://www.theodinproject.com/lessons/foundations-etch-a-sketch 
 
