@@ -1,15 +1,15 @@
 // grab container variable
 const container = document.getElementById("container");
-let customRows = 0
-let customCols = 0
-console.log(document.getElementById('rows-num').value)
-const buttonApply = document.getElementById('apply')
+let customRows = 0;
+let customCols = 0;
+console.log(document.getElementById("rows-num").value);
+const buttonApply = document.getElementById("apply");
 
 // always generate an 8x8 grid upon loading
-window.onload = generateGrid(8, 8)
+window.onload = generateGrid(8, 8);
 
 // function to generate grid
-function generateGrid(rows=8, cols=8) {
+function generateGrid(rows = 8, cols = 8) {
   container.style.setProperty("--grid-rows", rows);
   container.style.setProperty("--grid-cols", cols);
   for (let cell = 0; cell < rows * cols; cell++) {
@@ -20,17 +20,25 @@ function generateGrid(rows=8, cols=8) {
 }
 
 function removeOldGrid() {
-  const elements = document.getElementsByClassName('grid-item');
+  const elements = document.getElementsByClassName("grid-item");
   while (elements.length > 0) {
     elements[0].parentNode.removeChild(elements[0]);
   }
 }
-buttonApply.addEventListener('click', () => {
+buttonApply.addEventListener("click", () => {
   customRows = document.getElementById("rows-num").value;
   customCols = document.getElementById("cols-num").value;
+  if (customCols > 10 || customRows > 10) {
+    alert(
+      "Maximum row and column size is ten cells. Please enter a smaller number."
+    );
+    return;
+  } else if (customCols <= 0 || customRows <= 0) {
+    alert("Please enter a positive number.");
+    return;
+  }
   // console.log(customCols)
-  removeOldGrid()
-  generateGrid(customRows, customCols)
-
-} )
+  removeOldGrid();
+  generateGrid(customRows, customCols);
+});
 // generateGrid(8, 8);
