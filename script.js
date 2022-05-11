@@ -5,6 +5,9 @@ let customCols = 0
 console.log(document.getElementById('rows-num').value)
 const buttonApply = document.getElementById('apply')
 
+// always generate an 8x8 grid upon loading
+window.onload = generateGrid(8, 8)
+
 // function to generate grid
 function generateGrid(rows=8, cols=8) {
   container.style.setProperty("--grid-rows", rows);
@@ -25,7 +28,7 @@ function removeOldGrid() {
 buttonApply.addEventListener('click', () => {
   customRows = document.getElementById("rows-num").value;
   customCols = document.getElementById("cols-num").value;
-  console.log(customCols)
+  // console.log(customCols)
   removeOldGrid()
   generateGrid(customRows, customCols)
 
