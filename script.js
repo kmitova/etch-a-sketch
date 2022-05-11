@@ -1,7 +1,12 @@
 // grab container variable
 const container = document.getElementById("container");
+const customRows = document.getElementById("rows-num").value
+const customCols = document.getElementById("cols-num").value
+console.log(document.getElementById('rows-num').value)
+const buttonApply = document.getElementById('apply')
 
-function makeRows(rows, cols) {
+// function to generate grid
+function generateGrid(rows=8, cols=8) {
   container.style.setProperty("--grid-rows", rows);
   container.style.setProperty("--grid-cols", cols);
   for (let cell = 0; cell < rows * cols; cell++) {
@@ -11,4 +16,15 @@ function makeRows(rows, cols) {
   }
 }
 
-makeRows(8, 8);
+function removeOldGrid() {
+  const elements = document.getElementsByClassName('grid-item');
+  while (elements.length > 0) {
+    elements[0].parentNode.removeChild(elements[0]);
+  }
+}
+buttonApply.addEventListener('click', () => {
+  removeOldGrid()
+  generateGrid(customRows, customCols)
+
+} )
+generateGrid(8, 8);
