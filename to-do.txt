@@ -6,6 +6,8 @@
 
 5. adjust the size/ borders/ margins of the squares
 6. addeventlistener for mouseover (?) (see DOM video) for each square and write a function that changes the color of the square by changing the square's background color
+6a: create an option to clear the board and set it to default
+
 7. make it possible for the user to set the square amount themselves (but default is 8x8); then remove the dault and replace it with the new grid, taking the same space (the total space of the container div) + set a limit to the size: 100
 
 8. make it possible for the color to change
