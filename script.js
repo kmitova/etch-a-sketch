@@ -47,17 +47,24 @@ function colorChange(color) {
   if (eraserSelected) {
     return color = '#ffffff'
   }
+
   if (defaultColorOn) {
     
     return color = DEFAULTCOLOR
-    
   } else {
-    return color = "#FFC0CB";
-    
+    return color = generateRandomColor()
   }
-  
-  // make default color false for the other cases
 }
+// generate random color
+function generateRandomColor() {
+  let maxValue = 0xffffff;
+  let randomNumber = Math.random() * maxValue;
+  randomNumber = Math.floor(randomNumber);
+  randomNumber = randomNumber.toString(16);
+  let randomColor = randomNumber.padStart(6, 0);
+  return `#${randomColor.toUpperCase()}`;
+}
+
 
 function eraser() {
   currentCells.forEach((currentCell) =>
@@ -115,6 +122,7 @@ blackColorChange.addEventListener("click", () => {
   applyColor();
 });
 
+// activate eraser
 eraserOn.addEventListener("click", () => {
   eraserSelected = true
   randomColorChange.checked = false;
