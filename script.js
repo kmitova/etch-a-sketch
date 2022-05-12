@@ -59,6 +59,7 @@ function generateRandomColor() {
   let randomColor = randomNumber.padStart(6, 0);  // pads until needed length reached
   return `#${randomColor.toUpperCase()}`;
 }
+
 // erase cells' color
 function eraser() {
   currentCells.forEach((currentCell) =>
@@ -86,7 +87,7 @@ buttonApply.addEventListener("click", () => {
   customRows = document.getElementById("rows-num").value;
   customCols = document.getElementById("cols-num").value;
   
-  if (customCols > 10 || customRows > 10) {
+  if (customCols > 100 || customRows > 100) {
     alert(
       "Maximum row and column size is ten cells. Please enter a smaller number."
     );
