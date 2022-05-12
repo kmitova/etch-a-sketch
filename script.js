@@ -9,6 +9,8 @@ let defaultColorOn = true
 let customColor = false;
 let oldGridRemoved = false;
 let currentColor
+const randomColorChange = document.getElementById('random-color')
+const blackColorChange = document.getElementById('default-color')
 
 // always generates an 8x8 grid upon loading
 window.onload = generateGrid(8, 8);
@@ -41,7 +43,12 @@ function applyColor() {
 
 function colorChange(color) {
   if (defaultColorOn) {
+    
     return color = DEFAULTCOLOR
+    
+  } else {
+    return color = "#FFC0CB";
+    
   }
   // make default color false for the other cases
 }
@@ -70,4 +77,18 @@ buttonApply.addEventListener("click", () => {
     return;
   }
   renewGrid();
+});
+
+randomColorChange.addEventListener("click", () => {
+  blackColorChange.checked = false;
+  defaultColorOn = false;
+  colorChange();
+  applyColor();
+});
+
+blackColorChange.addEventListener("click", () => {
+  randomColorChange.checked = false;
+  defaultColorOn = true;
+  colorChange();
+  applyColor();
 });
