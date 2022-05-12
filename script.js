@@ -11,6 +11,8 @@ let oldGridRemoved = false;
 let currentColor
 const randomColorChange = document.getElementById('random-color')
 const blackColorChange = document.getElementById('default-color')
+const eraserOn = document.getElementById("transparent-color");
+let eraserSelected = false
 
 // always generates an 8x8 grid upon loading
 window.onload = generateGrid(8, 8);
@@ -42,6 +44,9 @@ function applyColor() {
 }
 
 function colorChange(color) {
+  if (eraserSelected) {
+    return color = '#ffffff'
+  }
   if (defaultColorOn) {
     
     return color = DEFAULTCOLOR
@@ -50,8 +55,17 @@ function colorChange(color) {
     return color = "#FFC0CB";
     
   }
+  
   // make default color false for the other cases
 }
+
+function eraser() {
+  currentCells.forEach((currentCell) =>
+    currentCell.addEventListener("mouseover", () => {
+      // console.log(e.type);
+      currentCell.style.backgroundColor = 'white';
+    })
+  )}
 
 function renewGrid() {
   // let elements = document.getElementsByClassName("grid-item");
@@ -79,16 +93,32 @@ buttonApply.addEventListener("click", () => {
   renewGrid();
 });
 
+// change to random color
+
 randomColorChange.addEventListener("click", () => {
   blackColorChange.checked = false;
+  eraserOn.checked = false
   defaultColorOn = false;
+  eraserSelected = false
   colorChange();
   applyColor();
 });
 
+// change back to black
+
 blackColorChange.addEventListener("click", () => {
   randomColorChange.checked = false;
   defaultColorOn = true;
+  eraserOn.checked = false
+  eraserSelected = false
   colorChange();
   applyColor();
 });
+
+eraserOn.addEventListener("click", () => {
+  eraserSelected = true
+  randomColorChange.checked = false;
+  blackColorChange.checked = false;
+  colorChange()
+  applyColor()
+} )
