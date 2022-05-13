@@ -1,35 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Monoton&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Monoton&display=swap");
 
 :root {
   --grid-cols: 1;
   --grid-rows: 1;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'IBM Plex Sans',
-    sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   background-color: #f1faee;
 }
 
 h1 {
-  font-family: 'Monoton', cursive;
+  font-family: "Monoton", cursive;
   font-size: 4rem;
   text-align: center;
-  background-color:#e63946;
+  background-color: #e63946;
   color: white;
   margin: 0;
-  padding: .5em;
+  padding: 0.5em;
+  padding-bottom: 0;
 }
 
 p.description {
   text-align: center;
   font-size: 1.5rem;
   margin-top: 0;
-  padding: .5em;
+  padding: 0.5em;
+  padding-top: 0;
   background-color: #e63946;
   color: white;
 }
@@ -41,7 +42,7 @@ p.description {
   grid-gap: 0em;
   grid-template-rows: repeat(var(--grid-rows), 1fr);
   grid-template-columns: repeat(var(--grid-cols), 1fr);
-  border: 4px solid red;
+  border: 4px solid #1d3557;
   background-color: white;
 }
 
@@ -54,14 +55,11 @@ p.description {
 main {
   display: flex;
   justify-content: space-around;
-  border: 4px solid blue;
   margin: 2em;
   margin-bottom: 4em;
-  
 }
 
 .customize {
-  border: 2px solid yellow;
   color: white;
   background-color: #457b9d;
   border-radius: 20px;
@@ -79,14 +77,11 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  border: 2px solid green;
   background-color: #1d3557;
   border-radius: 20px;
-  
 }
 
 .sizing {
-  border: 2px solid pink;
   display: flex;
   align-items: center;
   gap: 15px;
@@ -103,29 +98,29 @@ textarea {
   box-sizing: border-box;
 }
 
-
 button {
   display: block;
-  
+
   margin: auto;
-  /* style more */
   border: none;
   font-size: 1.5rem;
-  padding: .4em;
-  margin: .5em auto;
-  background-color: black;
+  padding: 0.4em;
+  margin: 0.5em auto;
+  background-color: #e63946;
   color: white;
   border-radius: 10px;
   cursor: pointer;
 }
 
 .colors {
-  border: 2px solid purple;
   margin-top: 4em;
   background-color: #1d3557;
   border-radius: 20px;
   padding: 0 2em 1em 2em;
+}
 
+.colors p {
+  padding-top: 0.5em;
 }
 
 input[type="checkbox"] {
@@ -151,6 +146,10 @@ label {
   }
   .container {
     margin: auto;
-    margin-top: 2em ;
+    margin-top: 2em;
+  }
+  .customize {
+    padding-bottom: 1.5em;
+    padding-top: 0.5em;
   }
 }

@@ -12,30 +12,44 @@
     <p class="description">Move your mouse over the board to draw!</p>
     <main>
       <div class="customize">
-        
         <p class="title">Choose number of cells:</p>
-      <div class="size-customize">
-        <div class="sizing">
+        <div class="size-customize">
+          <div class="sizing">
+            <textarea name="" id="rows-num" cols="1" rows="1">30</textarea>
+            <p>x</p>
 
-          <textarea name="" id="rows-num" cols="1" rows="1">30</textarea>
-        <p>x</p>
-
-        <textarea name="" id="cols-num" cols="1" rows="1">30</textarea>
-</div>
+            <textarea name="" id="cols-num" cols="1" rows="1">30</textarea>
+          </div>
         </div>
-        
+
         <button id="apply">Clear and Apply</button>
 
         <div class="colors">
           <p class="title">Colors:</p>
           <div class="color-flex">
+            <input
+              type="checkbox"
+              name=""
+              id="default-color"
+              checked
+              class="option"
+            />
+            <label for="">Default Black</label>
+            <input
+              type="checkbox"
+              name=""
+              id="random-color"
+              class="option"
+            /><label for="">Random Color</label>
 
-            <input type="checkbox" name="" id="default-color" checked class="option"/> <label for="">Default Black</label> 
-        <input type="checkbox" name="" id="random-color" class="option"/><label for="">Random Color</label>
-
-          <input type="checkbox" name="" id="transparent-color" class="option"/> <label for="">Eraser</label>
+            <input
+              type="checkbox"
+              name=""
+              id="transparent-color"
+              class="option"
+            />
+            <label for="">Eraser</label>
           </div>
-          
         </div>
       </div>
       <!-- the grid -->

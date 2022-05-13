@@ -13,8 +13,6 @@ const blackColorChange = document.getElementById("default-color");
 const eraserOn = document.getElementById("transparent-color");
 let eraserSelected = false;
 
-
-
 // always generates an 8x8 grid upon loading
 window.onload = generateGrid(30, 30);
 
@@ -40,6 +38,7 @@ function applyColor() {
     })
   );
 }
+
 // change color
 function colorChange(color) {
   if (eraserSelected) {
@@ -51,13 +50,14 @@ function colorChange(color) {
     return (color = generateRandomColor());
   }
 }
+
 // generate random color
 function generateRandomColor() {
   let maxValue = 0xffffff;
   let randomNumber = Math.random() * maxValue;
   randomNumber = Math.floor(randomNumber);
   randomNumber = randomNumber.toString(16);
-  let randomColor = randomNumber.padStart(6, 0);  // pads until needed length reached
+  let randomColor = randomNumber.padStart(6, 0); // pads until needed length reached
   return `#${randomColor.toUpperCase()}`;
 }
 
@@ -70,12 +70,9 @@ function eraser() {
     })
   );
 }
+
 // generate new grid
 function renewGrid() {
-  // let elements = document.getElementsByClassName("grid-item");
-  // while (elements.length > 0) {
-  //   elements[0].parentNode.removeChild(elements[0]);
-  // }
   container.replaceChildren();
   generateGrid(customRows, customCols);
   oldGridRemoved = true;
@@ -87,7 +84,6 @@ function renewGrid() {
 buttonApply.addEventListener("click", () => {
   customRows = document.getElementById("rows-num").value;
   customCols = document.getElementById("cols-num").value;
-  
   if (customCols > 100 || customRows > 100) {
     alert(
       "Maximum row and column size is ten cells. Please enter a smaller number."
