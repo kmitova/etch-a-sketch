@@ -86,7 +86,7 @@ buttonApply.addEventListener("click", () => {
   customCols = document.getElementById("cols-num").value;
   if (customCols > 100 || customRows > 100) {
     alert(
-      "Maximum row and column size is ten cells. Please enter a smaller number."
+      "Maximum row and column size is 100 cells. Please enter a smaller number."
     );
     return;
   } else if (customCols <= 0 || customRows <= 0) {
