@@ -18,3 +18,9 @@
   text-align: center;
   max-width: 1fr;
 }
+
+main {
+  display: flex;
+  justify-content: space-around;
+  
+}

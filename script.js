@@ -14,8 +14,9 @@ const eraserOn = document.getElementById("transparent-color");
 let eraserSelected = false;
 
 
+
 // always generates an 8x8 grid upon loading
-window.onload = generateGrid(8, 8);
+window.onload = generateGrid(30, 30);
 
 // FUNCTIONS
 
