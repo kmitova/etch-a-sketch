@@ -12,17 +12,26 @@ body, html {
   box-sizing: border-box;
   font-family: 'IBM Plex Sans',
     sans-serif;
+  background-color: #f1faee;
 }
 
 h1 {
   font-family: 'Monoton', cursive;
-  font-size: 4.5rem;
+  font-size: 4rem;
   text-align: center;
+  background-color:#e63946;
+  color: white;
+  margin: 0;
+  padding: .5em;
 }
 
 p.description {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  margin-top: 0;
+  padding: .5em;
+  background-color: #e63946;
+  color: white;
 }
 
 #container {
@@ -33,6 +42,7 @@ p.description {
   grid-template-rows: repeat(var(--grid-rows), 1fr);
   grid-template-columns: repeat(var(--grid-cols), 1fr);
   border: 4px solid red;
+  background-color: white;
 }
 
 .grid-item {
@@ -44,12 +54,103 @@ p.description {
 main {
   display: flex;
   justify-content: space-around;
+  border: 4px solid blue;
+  margin: 2em;
+  margin-bottom: 4em;
   
 }
 
+.customize {
+  border: 2px solid yellow;
+  color: white;
+  background-color: #457b9d;
+  border-radius: 20px;
+  padding: 0 2em 0 2em;
+  margin: 2em;
+}
+
+.customize p {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.size-customize {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 2px solid green;
+  background-color: #1d3557;
+  border-radius: 20px;
+  
+}
+
+.sizing {
+  border: 2px solid pink;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+textarea {
+  margin: 0;
+  padding: 0;
+  width: 60px;
+  height: 40px;
+  resize: none;
+  font-size: 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+button {
+  display: block;
+  
+  margin: auto;
+  /* style more */
+  border: none;
+  font-size: 1.5rem;
+  padding: .4em;
+  margin: .5em auto;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.colors {
+  border: 2px solid purple;
+  margin-top: 4em;
+  background-color: #1d3557;
+  border-radius: 20px;
+  padding: 0 2em 1em 2em;
+
+}
+
+input[type="checkbox"] {
+  width: 30px;
+  transform: scale(2);
+}
+
+label {
+  font-size: 1.5em;
+}
+
+.color-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* RESPONSIVENESS */
-@media (max-width: 845px) {
+@media (max-width: 1000px) {
   main {
-    display: unset;
+    display: block;
+    margin: 2em;
+  }
+  .container {
+    margin: auto;
+    margin-top: 2em ;
   }
 }
